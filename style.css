@@ -13,7 +13,8 @@ header {
 }
 
 h1{
-   font-family:"Plaster", system-ui;; 
+   font-family:"Plaster", system-ui;
+   font-size: 80px;
 }
 
 .father-container {
