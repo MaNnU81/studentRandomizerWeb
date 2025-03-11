@@ -100,8 +100,9 @@ export default class DataService {
                 ]
             }
         ]
-        
+        data.sort((a, b) => a.name.localeCompare(b.name));
     return data;
 }
 }
+
 
