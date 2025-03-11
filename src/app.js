@@ -12,6 +12,14 @@ for (let i = 0; i < studentData.length; i++) {
     const student = studentData[i];
     const studentContainer = document.createElement('div');
     studentContainer.classList.add('student-container');
+
+     // Aggiungi l'immagine del logo
+     const logo = document.createElement('img');
+     logo.src =  './assets/dice2.webp'; // Sostituisci con il percorso del tuo logo
+     logo.classList.add('student-logo');
+     studentContainer.appendChild(logo);
+
+
     const nameContainer = document.createElement('h3');
     // nameContainer.style.color = red;
     const nameNode = document.createTextNode(student.name + ' ' + student.surname);

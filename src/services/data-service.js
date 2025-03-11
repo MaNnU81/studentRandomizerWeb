@@ -100,8 +100,20 @@ export default class DataService {
                 ]
             }
         ]
+        // Funzione per capitalizzare la prima lettera
+        const capitalizeFirstLetter = (string) => {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        };
+
+        // Capitalizza la prima lettera di name e surname
+        data.forEach(student => {
+            student.name = capitalizeFirstLetter(student.name);
+            student.surname = capitalizeFirstLetter(student.surname);
+        });
+
         data.sort((a, b) => a.name.localeCompare(b.name));
-    return data;
+        return data;
+    
 }
 }
 

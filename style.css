@@ -1,15 +1,21 @@
 
 body {
- color: blue;
- background: rgb(214,98,249);
-background: radial-gradient(circle, rgba(214,98,249,1) 0%, rgba(150,150,150,1) 100%);
+ color: #F1F7EE;
+
+ background: linear-gradient(45deg, #B0BEA9  0%, #92AA83 100%);
 }
 
 
-header{
-text-align: center;
-
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
 }
+
+h1{
+   font-family:"Plaster", system-ui;; 
+}
+
 .father-container {
     display: flex;
     flex-wrap: wrap;
@@ -20,20 +26,38 @@ text-align: center;
 
 
 .student-container {
-
+    position: relative;
+    font-family: "Koh Santepheap", serif;
     padding: 20px;
     flex: 0 0 48%;
-    border: 2px solid black;
+    border-left: 1px solid rgba(0, 0, 0, 1); 
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
     box-sizing: border-box;
-    background: rgb(176,176,176);
-    background: linear-gradient(0deg, rgba(176,176,176,1) 0%, rgba(244,138,150,1) 100%);
+    /* background: rgb(176,176,176);
+    background: radial-gradient(circle, #92AA83 0%, B0BEA9 100%); */
     text-align: center;
-    border-radius: 20px;
-    height: 120px;
-    width: 50px;
+    border-radius: 20px 20px 20px 20px;
+    height: 150px;
+    width: 200px;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 1);
 }
- 
-
+.student-logo {
+    position: absolute; /* Aggiungi questa linea */
+    
+    
+    top: 10px; /* Regola la distanza dall'alto */
+    left: 10px; /* Regola la distanza da sinistra */
+    width: 80px; /* Regola la larghezza del logo */
+    height: auto; /* Mantieni le proporzioni */
+}
+.page-logo {
+    width: 200px; 
+    height: auto; 
+    margin-right: 20px; 
+    border-radius: 50%;
+    border: solid 1px black;
+    
+}
 
 h3 {
     padding: 0px;
