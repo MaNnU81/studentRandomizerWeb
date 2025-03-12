@@ -19,6 +19,12 @@ class Student {
         const yourName = secondStudent.name;
         return myName.localeCompare(yourName);
     }
+
+    compareByAge(secondStudent){
+        const myAge = this.yob;
+        const yourAge = secondStudent.yob;
+        return myAge - yourAge;
+    }
 }
 
 export default Student;
