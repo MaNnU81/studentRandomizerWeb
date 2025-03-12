@@ -1,7 +1,10 @@
-export default class DataService {
-    constructor() {}
 
-     getStudentsData() {
+import Student from "../model/student.js";
+
+export default class DataService {
+    constructor() { }
+
+    getStudentsData() {
         const data = [
             {
                 "name": "lorenzo",
@@ -100,21 +103,71 @@ export default class DataService {
                 ]
             }
         ]
+
+        const students = this.createStudentsFromRowData(data);
+        return students;
+
+
         // Funzione per capitalizzare la prima lettera
-        const capitalizeFirstLetter = (string) => {
-            return string.charAt(0).toUpperCase() + string.slice(1);
-        };
+        // const capitalizeFirstLetter = (string) => {
+        //     return string.charAt(0).toUpperCase() + string.slice(1);
+        // };
 
-        // Capitalizza la prima lettera di name e surname
-        data.forEach(student => {
-            student.name = capitalizeFirstLetter(student.name);
-            student.surname = capitalizeFirstLetter(student.surname);
-        });
 
-        data.sort((a, b) => a.name.localeCompare(b.name));
-        return data;
-    
-}
+
+        // // Capitalizza la prima lettera di name e surname
+        // data.forEach(student => {
+        //     student.name = capitalizeFirstLetter(student.name);
+        //     student.surname = capitalizeFirstLetter(student.surname);
+        // });
+
+        // data.sort((a, b) => a.name.localeCompare(b.name));
+
+
+        // return data;
+
+    }
+
+    getStudentsByName(){
+        const students = this.getStudentsData();
+        const studentsClone = students.slice();
+        studentsClone.sort((s1, s2) => s1.compareByName(s2));
+        return studentsClone;
+    }
+
+    createStudentsFromRowData(data) {
+        const students = [];
+        for (let i = 0; i < data.length; i++) {
+            const element = data[i];
+            const newStudent = new Student(element.name, element.surname, element.yob, element.gender, element.nationality, element.marks);
+
+            students.push(newStudent);
+        }
+        return students;
+    }
+
+    getShuffledStudents() {
+        const students = this.getStudentsData();
+        const studentsClone = students.slice();
+        const shuffledStudents = this.shuffleArray(studentsClone);
+        return shuffledStudents
+    }
+
+    shuffleArray(array){
+        // const newArray = array.slice();
+        // newArray.sort(() => Math.random()-0.5);
+        // return newArray;
+        const cloneArray = array.slice();
+        const newArray = [];
+
+        while(cloneArray.length > 0){
+            const randomIndex = Math.round(Math.random() * (cloneArray.length -1));
+            const randomStudent = cloneArray[randomIndex];
+            newArray.push(randomStudent);
+            cloneArray.splice(randomIndex, 1);
+        }
+        return newArray;
+    }
 }
 
 

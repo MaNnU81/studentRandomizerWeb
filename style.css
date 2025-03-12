@@ -2,7 +2,7 @@
 body {
  color: #F1F7EE;
 
- background: linear-gradient(45deg, #B0BEA9  0%, #92AA83 100%);
+ background: linear-gradient(45deg, #92AA83  0%, #B0BEA9  100%);
 }
 
 
@@ -39,7 +39,6 @@ h1{
     text-align: center;
     border-radius: 20px 20px 20px 20px;
     height: 150px;
-    width: 200px;
     box-shadow: -2px 2px 5px rgba(0, 0, 0, 1);
 }
 .student-logo {

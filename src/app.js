@@ -3,8 +3,7 @@ import DataService from "./services/data-service.js";
 ///https://caniuse.com/?search=appendchild
 const service = new DataService();
 
-const studentData = service.getStudentsData()
-
+const studentData = service.getShuffledStudents()
 
 const container = document.getElementById('students-container')
 container.classList.add('father-container');
@@ -24,17 +23,16 @@ for (let i = 0; i < studentData.length; i++) {
     // nameContainer.style.color = red;
     const nameNode = document.createTextNode(student.name + ' ' + student.surname);
     nameContainer.appendChild(nameNode);
-    const countryContainer = document.createElement('h3');
+    const countryContainer = document.createElement('span');
     const countryNode = document.createTextNode('nazionalita: '+ student.nationality);
-    const genderContainer = document.createElement('h3');
+    const genderContainer = document.createElement('span');
     const genderNode = document.createTextNode('genere: '+ student.gender)
-    const annoAttuale = new Date().getFullYear();
-    const studentAge = annoAttuale - student.yob;
-    const ageContainer = document.createElement('h3');
-    const ageNode = document.createTextNode('eta: '+ studentAge);
+    
+    const ageContainer = document.createElement('span');
+    const ageNode = document.createTextNode('eta: '+ student.getAge());
 
 
-    ageContainer.appendChild(ageNode);
+   ageContainer.appendChild(ageNode);
     genderContainer.appendChild(genderNode);
     countryContainer.appendChild(countryNode);
     studentContainer.appendChild(nameContainer);
