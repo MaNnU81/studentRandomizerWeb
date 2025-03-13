@@ -40,6 +40,7 @@ h1{
     border-radius: 20px 20px 20px 20px;
     height: 150px;
     box-shadow: -2px 2px 5px rgba(0, 0, 0, 1);
+    
 }
 .student-logo {
     position: absolute; /* Aggiungi questa linea */

@@ -1,21 +1,27 @@
 import DataService from "./services/data-service.js";
 ///https://caniuse.com/?search=appendchild
 const service = new DataService();
+function getStudents() {
+   const studentsPromise = service.getStudentsData()
+   studentsPromise.then(studentsData => render(studentsData))
+    
+}
 
 function orderByName() {
-    const studentData = service.getStudentsByName();
-    render(studentData);
+    const studentsPromise = service.getStudentsByName();
+    studentsPromise.then(studentsData => render(studentsData))
 }
 
 function orderByAge() {
-    const studentData = service.getStudentsByAge();
-    render(studentData);
+    service.getStudentsByAge().then(studentsData => render(studentsData))
+   
 }
 
-function shuffle() {
-    const studentData = service.getShuffledStudents();
+async function shuffle() {
+    const studentData = await service.getShuffledStudents();
     render(studentData);
 }
+window.getStudents = getStudents;
 window.orderByName = orderByName;
 window.orderByAge = orderByAge;
 window.shuffle = shuffle;
