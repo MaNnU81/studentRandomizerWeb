@@ -83,9 +83,7 @@ footer{
     text-align: center;
 }
 
-bottoni{
 
-}
 
 
 
@@ -105,12 +103,12 @@ bottoni{
 
 .popup-content {
     background-color: #41373767;
-    width: clamp(300px, 30vw, 800px); /* Larghezza minima 300px, reattiva al 50% della larghezza della finestra, massima 800px */
+    width: clamp(300px, 30vw, 800px); 
     height: clamp(400px, 60vh, 1000px);
     border-radius: 10px;
    
     text-align: center;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);; */
+   
 }
 
 .hidden {
@@ -155,8 +153,23 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    
 }
 
 button:hover {
-    background-color: #7a8f6b;
+    
+    border: 0.5px solid black;
+    color: black;
+}
+.randomizza {
+    border: 0.5px solid black;
+    color: black;
+    text-align: center;
+   
+}
+.randomizza:hover{
+    background-color: #92AA83;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }
