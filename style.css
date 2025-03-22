@@ -14,7 +14,13 @@ header {
 
 h1{
    font-family:"Plaster", system-ui;
-   font-size: 80px;
+   font-size: clamp(40px, 8vw, 80px);
+   background: linear-gradient(to right, white 40%, #92AA83 60%);
+   background-clip: text;
+   color: transparent;
+  
+  
+   
 }
 
 .father-container {
@@ -22,23 +28,29 @@ h1{
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
+    justify-content: space-between; 
 }
 
 
 
 .student-container {
+    display: flex;
+    flex-direction: column; /* Dispone gli elementi in colonna */
+    gap: 5px;
     position: relative;
     font-family: "Koh Santepheap", serif;
     padding: 20px;
-    flex: 0 0 48%;
+    flex: 0 0 calc(50% - 20px);
     border-left: 1px solid rgba(0, 0, 0, 1); 
     border-bottom: 1px solid rgba(0, 0, 0, 1);
     box-sizing: border-box;
     /* background: rgb(176,176,176);
     background: radial-gradient(circle, #92AA83 0%, B0BEA9 100%); */
-    text-align: center;
+    text-align: right;
     border-radius: 20px 20px 20px 20px;
-    height: 150px;
+    height: auto;
+    max-width: auto;
+    width: auto;
     box-shadow: -2px 2px 5px rgba(0, 0, 0, 1);
     
 }
@@ -50,6 +62,7 @@ h1{
     left: 10px; /* Regola la distanza da sinistra */
     width: 80px; /* Regola la larghezza del logo */
     height: auto; /* Mantieni le proporzioni */
+    z-index: -1;
 }
 .page-logo {
     width: 200px; 
@@ -72,4 +85,78 @@ footer{
 
 bottoni{
 
+}
+
+
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+   
+   
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 1000;
+    padding: 20px;
+}
+
+
+.popup-content {
+    background-color: #41373767;
+    width: clamp(300px, 30vw, 800px); /* Larghezza minima 300px, reattiva al 50% della larghezza della finestra, massima 800px */
+    height: clamp(400px, 60vh, 1000px);
+    border-radius: 10px;
+   
+    text-align: center;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);; */
+}
+
+.hidden {
+    display: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spazio tra i campi */
+    margin-top: 20px;
+    padding: 20px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: rgb(122, 143, 107);
+}
+
+input::placeholder {
+    color: #888888; 
+    font-style: italic; 
+   
+    
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #92AA83;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7a8f6b;
 }
