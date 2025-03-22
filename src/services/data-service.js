@@ -30,7 +30,7 @@ export default class DataService {
         // responsePromise.then(this.useResponse);
         // responsePromise.catch(this.handleError);
 
-        const studentsPromise = fetch("/assets/students.json")
+        const studentsPromise = fetch("./assets/students.json")
         .then(resp => resp.json())
         .then(jsonData => {
                 const students = this.createStudentsFromRowData(jsonData)
