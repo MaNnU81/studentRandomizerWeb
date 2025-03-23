@@ -11,7 +11,7 @@ export default class DataService {
         if (storedStudents) {
             console.log("Recupero studenti dal localStorage.");
             const parsedStudents = JSON.parse(storedStudents);
-            // Convertiamo ogni oggetto "plain" in una vera istanza della classe Student
+            
             studentsArray = parsedStudents.map(student => new Student(
                 student.name,
                 student.surname,
@@ -82,4 +82,25 @@ export default class DataService {
         }
         return newArray;
     }
+
+    getStudentsFromLocalStorage() {
+        const storedStudents = localStorage.getItem('students');
+        return storedStudents ? JSON.parse(storedStudents) : [];  // Ritorna array vuoto se non esiste.
+    }
+
+    
+
+    getStudentsFromLocalStorage(){
+        const studentsData = JSON.parse(localStorage.getItem('students')) || [];
+        return studentsData.map(student => new Student(
+            student.name,
+            student.surname,
+            student.yob,
+            student.gender,
+            student.nationality,
+            student.marks
+        ));
+    }
+
+  
 }
